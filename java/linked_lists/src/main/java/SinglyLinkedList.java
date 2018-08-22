@@ -1,5 +1,5 @@
 public class SinglyLinkedList implements LinkedList {
-  static class Node {
+  public class Node {
     private int num;
     private Node next;
 
@@ -25,10 +25,6 @@ public class SinglyLinkedList implements LinkedList {
    this.node = new Node(firstNum);
   }
 
-  public Node getNode() {
-    return this.node;
-  }
-
   public LinkedList sort(boolean asc) {
     return null;
   }
@@ -43,5 +39,22 @@ public class SinglyLinkedList implements LinkedList {
 
   public LinkedList insertInEnd(int num) {
     return null;
+  }
+
+  public String printAll() {
+    if (this.node == null) { throw new IllegalStateException("The list is empty."); }
+
+    String output = "";
+
+    Node pointer = this.node;
+
+    output = output + Integer.toString(pointer.getNum());
+
+    while(node.next != null) {
+      pointer = node.next;
+      output = output + " " + Integer.toString(pointer.getNum());
+    }
+
+    return output;
   }
 }
