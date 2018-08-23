@@ -15,43 +15,92 @@ public class SinglyLinkedList implements LinkedList {
     public void setNext(Node newNext) { this.next = newNext; }
   }
   
-  public Node node;
+  public Node head;
+  public Node tail;
+  private int size;
 
   // Constructor for an empty list
-  SinglyLinkedList() {}
+  SinglyLinkedList() { }
 
   // Constructor for a list with one element
   SinglyLinkedList(int firstNum) {
-   this.node = new Node(firstNum);
+   this.head = new Node(firstNum);
+   this.tail = this.head;
+   this.size++;
   }
 
-  public LinkedList sort(boolean asc) {
+  private SinglyLinkedList makeCopy() {
+    if(this.head == null)
+      return new SinglyLinkedList();
+
+    SinglyLinkedList newList = new SinglyLinkedList();
+
+    Node pointer = this.head;
+    Node node = new Node(pointer.getNum());
+
+    newList.head = node;
+    newList.tail = newList.head;
+
+    while(pointer.next != null) {
+      pointer = pointer.next;
+      node = new Node(pointer.getNum());
+      newList.tail.setNext(node);
+      newList.tail = node;
+    }
+
+    return newList;
+  }
+
+  public SinglyLinkedList sort(boolean asc) {
     return null;
   }
 
-  public LinkedList remove(int num) {
+  public SinglyLinkedList remove(int num) {
     return null;
   }
 
-  public LinkedList insertInFront(int num) {
-    return null;
+  public SinglyLinkedList insertInFront(int num) {
+    SinglyLinkedList newList = makeCopy();
+    Node newNode = new Node(num);
+    newNode.next = newList.head;
+    newList.head = newNode;
+    newList.size++;
+    return newList;
   }
 
-  public LinkedList insertInEnd(int num) {
-    return null;
+  public SinglyLinkedList insertInEnd(int num) {
+    SinglyLinkedList newList = makeCopy();
+
+    Node newNode = new Node(num);
+
+    if(newList.head == null) {
+      newList.head = newNode;
+      newList.tail = newList.head;
+    } else {
+      newList.tail.setNext(newNode);
+      newList.tail = newNode;  
+    }
+
+    newList.size++;
+
+    return newList;
+  }
+
+  public int getSize() {
+    return this.size;
   }
 
   public String printAll() {
-    if (this.node == null) { throw new IllegalStateException("The list is empty."); }
+    if (this.head == null) { throw new IllegalStateException("The list is empty."); }
 
     String output = "";
 
-    Node pointer = this.node;
+    Node pointer = this.head;
 
     output = output + Integer.toString(pointer.getNum());
 
-    while(node.next != null) {
-      pointer = node.next;
+    while(pointer .next != null) {
+      pointer = pointer.next;
       output = output + " " + Integer.toString(pointer.getNum());
     }
 
