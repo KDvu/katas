@@ -1,6 +1,7 @@
 interface LinkedList {
-  LinkedList insertInFront(int num);
-  LinkedList insertInEnd(int num);
-  LinkedList sort(boolean asc);
-  LinkedList remove(int num);
+  Object insertInFront(int num);
+  Object insertInEnd(int num);
+  Object sort(boolean asc);
+  Object remove(int num);
+  int getSize();
 }
