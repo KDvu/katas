@@ -63,7 +63,27 @@ public class SinglyLinkedList implements LinkedList<SinglyLinkedList> {
   }
 
   public SinglyLinkedList remove(int num) {
-    return null;
+    if (this.head == null) { throw new IllegalStateException("The list is empty."); }
+
+    SinglyLinkedList newList = makeCopy();
+
+    Node pointer = newList.head;
+
+    if(pointer.getNum() == num) {
+      newList.head = null;
+      return newList;
+    } else {
+      Node prevNode = pointer;
+      pointer = pointer.next;
+
+      for(Node ptr = pointer; pointer != null; pointer = pointer.next) {
+        if(ptr.getNum() == num) {
+          prevNode.next = ptr.next;
+        }
+      }
+    }
+
+    return newList;
   }
 
   public SinglyLinkedList insertInFront(int num) {
@@ -98,7 +118,7 @@ public class SinglyLinkedList implements LinkedList<SinglyLinkedList> {
   }
 
   public String printAll() {
-    if (this.head == null) { throw new IllegalStateException("The list is empty."); }
+    if (this.head == null) {  return ""; }
 
     String output = "";
 

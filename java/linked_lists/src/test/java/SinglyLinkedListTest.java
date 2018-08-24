@@ -56,9 +56,10 @@ public class SinglyLinkedListTest {
   }
 
   // Testing: printAll()
-  @Test(expected = IllegalStateException.class) public void testPrintAllWhenTheListIsEmptyShouldThrowError() {
+  @Test public void testShouldPrintAnEmptyStringWhenTheListIsEmpty() {
     SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-    singlyLinkedList.printAll();
+    
+    assertEquals("", singlyLinkedList.printAll());
   }
 
   // Testing: printAll()
@@ -109,14 +110,14 @@ public class SinglyLinkedListTest {
     assertFalse(singlyLinkedList.contains(7));
   }
 
-  @Test public void testShouldReturnTrueIf7IsInTheListWith1Element() {
+  @Test public void testShouldReturnTrueIf7IsInTheListWithOneElement() {
     SinglyLinkedList singlyLinkedList = new SinglyLinkedList(7);
 
     assertTrue(singlyLinkedList.contains(7));
 
   }
 
-  @Test public void testShouldReturnTrueIf10IsInTheListWith3Elements() {
+  @Test public void testShouldReturnTrueIf10IsInTheListWithThreeElements() {
     SinglyLinkedList singlyLinkedList = new SinglyLinkedList(3);
     singlyLinkedList = singlyLinkedList.insertInEnd(10);
     singlyLinkedList = singlyLinkedList.insertInEnd(1);
@@ -124,4 +125,28 @@ public class SinglyLinkedListTest {
     assertTrue(singlyLinkedList.contains(10));
 
   }
+
+  // Testing: remove(int num)
+  @Test(expected = IllegalStateException.class) public void testRemoveWhenTheListIsEmptyShouldThrowError() {
+    SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+    singlyLinkedList.remove(3);
+  }  
+
+  @Test public void testShouldReturnAnEmptyListWhenRemoveIsCalledOnAListWithOneElement() {
+    SinglyLinkedList oldSinglyLinkedList = new SinglyLinkedList(6);
+    SinglyLinkedList newSinglyLinkedList = oldSinglyLinkedList.remove(6);
+
+    assertEquals("6", oldSinglyLinkedList.printAll());
+    assertEquals("", newSinglyLinkedList.printAll());
+  }
+
+  @Test public void testShouldReturnAListWithOneElementWhenRemoveIsCalledOnAListWithTwoElements() {
+    SinglyLinkedList oldSinglyLinkedList = new SinglyLinkedList(4);
+    oldSinglyLinkedList = oldSinglyLinkedList.insertInEnd(3);
+    SinglyLinkedList newSinglyLinkedList = oldSinglyLinkedList.remove(3);
+
+    assertEquals("4 3", oldSinglyLinkedList.printAll());
+    assertEquals("4", newSinglyLinkedList.printAll());
+  }
+
 }
