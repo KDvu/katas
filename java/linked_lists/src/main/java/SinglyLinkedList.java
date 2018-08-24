@@ -51,8 +51,15 @@ public class SinglyLinkedList implements LinkedList<SinglyLinkedList> {
     return newList;
   }
 
-  public boolean contains(int num) {
-    return true;
+  public boolean contains(int key) {
+    if(this.head == null) { return false; } 
+
+    for(Node pointer = this.head; pointer != null; pointer = pointer.next) {
+      if(pointer.getNum() == key) 
+        return true;
+    }
+
+    return false;
   }
 
   public SinglyLinkedList remove(int num) {

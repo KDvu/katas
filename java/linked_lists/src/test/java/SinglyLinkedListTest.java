@@ -94,6 +94,34 @@ public class SinglyLinkedListTest {
     // Testing immutability characteristic 
     assertEquals("10", oldSinglyLinkedList.printAll());
     assertEquals("10 5", newSinglyLinkedList.printAll());
+  }
+
+  // Testing: contains(int num)
+  @Test public void testShouldReturnFalseIfTheListIsEmpty() {
+    SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+
+    assertFalse(singlyLinkedList.contains(2));
+  }
+
+  @Test public void testShouldReturnFalseIfThe7IsNotInTheList() {
+    SinglyLinkedList singlyLinkedList = new SinglyLinkedList(4);
+
+    assertFalse(singlyLinkedList.contains(7));
+  }
+
+  @Test public void testShouldReturnTrueIf7IsInTheListWith1Element() {
+    SinglyLinkedList singlyLinkedList = new SinglyLinkedList(7);
+
+    assertTrue(singlyLinkedList.contains(7));
+
+  }
+
+  @Test public void testShouldReturnTrueIf10IsInTheListWith3Elements() {
+    SinglyLinkedList singlyLinkedList = new SinglyLinkedList(3);
+    singlyLinkedList = singlyLinkedList.insertInEnd(10);
+    singlyLinkedList = singlyLinkedList.insertInEnd(1);
+
+    assertTrue(singlyLinkedList.contains(10));
 
   }
 }
