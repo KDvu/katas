@@ -1,4 +1,4 @@
-public class SinglyLinkedList implements LinkedList {
+public class SinglyLinkedList implements LinkedList<SinglyLinkedList> {
   public class Node {
     private int num;
     private Node next;
@@ -51,8 +51,8 @@ public class SinglyLinkedList implements LinkedList {
     return newList;
   }
 
-  public SinglyLinkedList sort(boolean asc) {
-    return null;
+  public boolean contains(int num) {
+    return true;
   }
 
   public SinglyLinkedList remove(int num) {

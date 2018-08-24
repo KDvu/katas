@@ -74,7 +74,7 @@ public class SinglyLinkedListTest {
     SinglyLinkedList oldSinglyLinkedList = new SinglyLinkedList(7);
     SinglyLinkedList newSinglyLinkedList = oldSinglyLinkedList.insertInFront(5);
 
-    // Testing mutability characteristic 
+    // Testing immutability characteristic 
     assertEquals("7", oldSinglyLinkedList.printAll());
     assertEquals("5 7", newSinglyLinkedList.printAll());
   }
@@ -91,7 +91,7 @@ public class SinglyLinkedListTest {
     SinglyLinkedList oldSinglyLinkedList = new SinglyLinkedList(10);
     SinglyLinkedList newSinglyLinkedList = oldSinglyLinkedList.insertInEnd(5);
 
-    // Testing mutability characteristic 
+    // Testing immutability characteristic 
     assertEquals("10", oldSinglyLinkedList.printAll());
     assertEquals("10 5", newSinglyLinkedList.printAll());
 
