@@ -1,4 +1,4 @@
-# About this repository
+# About This Repository
 
 My repository for katas that I do to practice/learn programming concepts or new languages.
 
