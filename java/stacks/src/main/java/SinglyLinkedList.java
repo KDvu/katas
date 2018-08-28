@@ -38,7 +38,6 @@ public class SinglyLinkedList {
       node.setNext(this.head);
       this.head = node;
     }
-    this.size++;
   }
 
   public void addLast(Node node) {
@@ -49,6 +48,5 @@ public class SinglyLinkedList {
       this.tail.setNext(node);
       this.tail = node;
     }
-    this.size++;
   }
 }
