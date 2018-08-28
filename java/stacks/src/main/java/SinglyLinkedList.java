@@ -49,4 +49,9 @@ public class SinglyLinkedList {
       this.tail = node;
     }
   }
+
+  public void removeFirst() throws EmptyLinkedListException{
+    if(this.head == null) { throw new EmptyLinkedListException(); } 
+    this.head = this.head.getNext();
+  }
 }

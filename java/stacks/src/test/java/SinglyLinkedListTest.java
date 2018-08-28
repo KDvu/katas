@@ -137,4 +137,50 @@ public class SinglyLinkedListTest {
 
     assertEquals(linkedList.getHead(), linkedList.getTail());
   }
+
+  // Testing RemoveFirst()
+  @Test public void testShouldThrowEmptyLinkedListExceptionWhenRemoveFirstIsCalledWhenTheListIsEmpty() {
+    SinglyLinkedList linkedList = new SinglyLinkedList();
+    try {
+      linkedList.removeFirst();
+      fail("Expected EmptyLinkedListException when removeFirst() is called when the list is empty.");
+    } catch(EmptyLinkedListException e) {
+      //Test passed
+    }
+  }
+
+  @Test public void testSizeShouldBe0WhenTheOnlyElementInTheListIsRemoved() {
+    int expectedSize = 0;
+    SinglyLinkedList linkedList = new SinglyLinkedList();
+    Node node = new Node(3);
+    linkedList.addFirst(node);
+    try {
+      linkedList.removeFirst();
+    } catch(EmptyLinkedListException e) {
+      fail("EmptyLinkedListException was thrown when an element should have been removed.");
+    }
+
+    int result = linkedList.size();
+    assertEquals(expectedSize, result);
+  }
+
+  @Test public void testSizeShouldBe1WhenRemoveFirstIsCalledWhenThereAreTwoElementsInTheList() {
+    int expectedSize = 1;
+    SinglyLinkedList linkedList = new SinglyLinkedList();
+    Node node = new Node(3);
+    linkedList.addFirst(node);
+
+    Node node2 = new Node(4);
+    linkedList.addFirst(node2);
+
+    try {
+      linkedList.removeFirst();
+    } catch(EmptyLinkedListException e) {
+      fail("EmptyLinkedListException was thrown when an element should have been removed.");
+    }
+
+    int result = linkedList.size();
+    assertEquals(expectedSize, result);
+    assertEquals(3, linkedList.getHead().getData());
+  }
 }
