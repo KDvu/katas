@@ -1,4 +1,6 @@
 import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.*;
 
 public class NodeTest {
@@ -68,6 +70,7 @@ public class NodeTest {
     Node node2 = new Node(2);
 
     node.setNext(node2);
+    assertThat(node.getNext(), instanceOf(Node.class));
     assertEquals(2, node.getNext().getData());
   }
 }
