@@ -1,12 +1,10 @@
 public class SinglyLinkedList {
   private Node head;
   private Node tail;
-  private int size;
 
   SinglyLinkedList() {
     head = null;
     tail = null;
-    size = 0;
   }
 
   public Node getHead() { return this.head; }
@@ -23,7 +21,14 @@ public class SinglyLinkedList {
     return this;
   }
 
-  public int getSize() { return this.size; }
+  public int size() { 
+    int size = 0;
+
+    for(Node ptr = this.head; ptr != null; ptr = ptr.getNext()) 
+      size++;
+
+    return size;
+  }
 
   public void addFirst(Node node) {
     if(this.head == null)  {

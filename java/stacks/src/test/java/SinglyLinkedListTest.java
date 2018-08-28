@@ -49,10 +49,10 @@ public class SinglyLinkedListTest {
     assertEquals(5, result.getData());
   }
 
-  // Testing: getSize()
+  // Testing: size()
   @Test public void testShouldReturn0IfTheListIsEmpty() {
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    int result = linkedList.getSize();
+    int result = linkedList.size();
     assertEquals(0, result);
   }
 
@@ -62,7 +62,7 @@ public class SinglyLinkedListTest {
     SinglyLinkedList linkedList = new SinglyLinkedList();
     Node node = new Node(7);
     linkedList.addFirst(node);
-    int result = linkedList.getSize();
+    int result = linkedList.size();
     assertEquals(expectedSize, result);
   }
 
@@ -74,7 +74,7 @@ public class SinglyLinkedListTest {
 
     Node node = new Node(7);
     linkedList.addFirst(node);
-    int result = linkedList.getSize();
+    int result = linkedList.size();
     assertEquals(expectedSize, result);
   }
 
@@ -104,7 +104,7 @@ public class SinglyLinkedListTest {
     SinglyLinkedList linkedList = new SinglyLinkedList();
     Node node = new Node(2);
     linkedList.addLast(node);
-    int result = linkedList.getSize();
+    int result = linkedList.size();
     assertEquals(expectedSize, result);
   }
 
@@ -116,7 +116,7 @@ public class SinglyLinkedListTest {
 
     Node addedNode = new Node(2);
     linkedList.addLast(addedNode);
-    int result = linkedList.getSize();
+    int result = linkedList.size();
     assertEquals(expectedSize, result);
   }
 
