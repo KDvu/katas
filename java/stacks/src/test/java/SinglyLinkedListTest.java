@@ -60,8 +60,7 @@ public class SinglyLinkedListTest {
   @Test public void testShouldReturnASizeOf1AfterAddFirstIsCalledWithAEmptyList() {
     int expectedSize = 1;
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    Node node = new Node(7);
-    linkedList.addFirst(node);
+    linkedList.addFirst(7);
     int result = linkedList.size();
     assertEquals(expectedSize, result);
   }
@@ -69,22 +68,17 @@ public class SinglyLinkedListTest {
   @Test public void testShouldReturnASizeOf2AfterAddFirstIsCalledWithAEmptyList() {
     int expectedSize = 2;
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    Node initialNode = new Node(3);
-    linkedList.addFirst(initialNode);
+    linkedList.addFirst(3);
 
-    Node node = new Node(7);
-    linkedList.addFirst(node);
+    linkedList.addFirst(7);
     int result = linkedList.size();
     assertEquals(expectedSize, result);
   }
 
   @Test public void testHeadFieldShouldBeTheNewAddedNode() {
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    Node initialHead = new Node(2);
-    linkedList.addFirst(initialHead);
-
-    Node addedNode = new Node(4);
-    linkedList.addFirst(addedNode);
+    linkedList.addFirst(2);
+    linkedList.addFirst(4);
 
     Node result = linkedList.getHead();
     assertThat(result, instanceOf(Node.class));
@@ -93,8 +87,7 @@ public class SinglyLinkedListTest {
 
   @Test public void testTailFieldShouldReferToTheSameNodeObjectAsTheHeadFieldIfAddFirstIsCalledOnAnEmptyLinkedList() {
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    Node node = new Node(7);
-    linkedList.addFirst(node);
+    linkedList.addFirst(7);
     assertEquals(linkedList.getHead(), linkedList.getTail());
   }
 
@@ -102,8 +95,7 @@ public class SinglyLinkedListTest {
   @Test public void testShouldReturnSizeOf1AfterAddLastIsCalledWithEmptyList() {
     int expectedSize = 1;
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    Node node = new Node(2);
-    linkedList.addLast(node);
+    linkedList.addLast(2);
     int result = linkedList.size();
     assertEquals(expectedSize, result);
   }
@@ -111,19 +103,15 @@ public class SinglyLinkedListTest {
   @Test public void testShouldReturnSizeOf2AfterAddLastIsCalledOnAListWith1Element() {
     int expectedSize = 2;
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    Node initialNode = new Node(5);
-    linkedList.addFirst(initialNode);
-
-    Node addedNode = new Node(2);
-    linkedList.addLast(addedNode);
+    linkedList.addFirst(5);
+    linkedList.addLast(2);
     int result = linkedList.size();
     assertEquals(expectedSize, result);
   }
 
   @Test public void testTailFieldShouldBeTheNewAddedNodeWhenAddLastIsCalledOnAnEmptyList() {
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    Node node = new Node(4);
-    linkedList.addLast(node);
+    linkedList.addLast(4);
 
     Node result = linkedList.getTail();
     assertThat(result, instanceOf(Node.class));
@@ -132,8 +120,7 @@ public class SinglyLinkedListTest {
 
   @Test public void testHeadFieldShouldReferToTheSameNodeObjectAsTheTailFieldIfAddLastIsCalledOnAnEmptyLinkedList() {
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    Node node = new Node(4);
-    linkedList.addLast(node);
+    linkedList.addLast(4);
 
     assertEquals(linkedList.getHead(), linkedList.getTail());
   }
@@ -152,8 +139,7 @@ public class SinglyLinkedListTest {
   @Test public void testSizeShouldBe0WhenTheOnlyElementInTheListIsRemoved() {
     int expectedSize = 0;
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    Node node = new Node(3);
-    linkedList.addFirst(node);
+    linkedList.addFirst(3);
     try {
       linkedList.removeFirst();
     } catch(EmptyLinkedListException e) {
@@ -167,11 +153,9 @@ public class SinglyLinkedListTest {
   @Test public void testSizeShouldBe1WhenRemoveFirstIsCalledWhenThereAreTwoElementsInTheList() {
     int expectedSize = 1;
     SinglyLinkedList linkedList = new SinglyLinkedList();
-    Node node = new Node(3);
-    linkedList.addFirst(node);
+    linkedList.addFirst(3);
 
-    Node node2 = new Node(4);
-    linkedList.addFirst(node2);
+    linkedList.addFirst(4);
 
     try {
       linkedList.removeFirst();

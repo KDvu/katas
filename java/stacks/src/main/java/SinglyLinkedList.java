@@ -30,7 +30,9 @@ public class SinglyLinkedList {
     return size;
   }
 
-  public void addFirst(Node node) {
+  public void addFirst(int data) {
+    Node node = new Node(data);
+    
     if(this.head == null)  {
       this.head = node;
       this.tail = this.head;
@@ -40,7 +42,9 @@ public class SinglyLinkedList {
     }
   }
 
-  public void addLast(Node node) {
+  public void addLast(int data) {
+    Node node = new Node(data);
+
     if(this.tail == null) {
       this.tail = node;
       this.head = this.tail;
