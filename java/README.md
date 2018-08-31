@@ -1,6 +1,6 @@
 # Java Katas
 
-Katas done using Java.
+Katas done using Java and Test Driven Development (TDD).
 
 ## Dockerfile and Makefile
 Practiced creating a Dockerfile and Makefile to create the development environment.
@@ -9,6 +9,10 @@ Practiced creating a Dockerfile and Makefile to create the development environme
 - `make run` runs the process in a isolated contained derived from the image built with `make build`.
 
 ## [Linked_lists](https://github.com/KDvu/katas/tree/master/java/linked_lists)
-- Immutable linked list
-- Kata doing using Test Driven Development (TDD)
+- Non-generic immutable linked list
+- junit4
 
+## [Stacks](https://github.com/KDvu/katas/tree/master/java/stacks)
+- Uses different linked list implementation than the in the linked list kata
+- Non-generic singly linked list + stack
+- junit4
