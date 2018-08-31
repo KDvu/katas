@@ -13,6 +13,6 @@ Practiced creating a Dockerfile and Makefile to create the development environme
 - junit4
 
 ## [Stacks](https://github.com/KDvu/katas/tree/master/java/stacks)
-- Uses different linked list implementation than the in the linked list kata
 - Non-generic singly linked list + stack
+- Uses different linked list implementation than the linked list kata
 - junit4
