@@ -38,4 +38,8 @@ test {
     useJUnitPlatform {
         includeEngines 'junit-jupiter'
     }
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
