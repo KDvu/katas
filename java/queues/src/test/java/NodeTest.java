@@ -1,5 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -28,7 +29,7 @@ class NodeTest {
   }
 
   @Nested
-  @DisplayName("After new node is instantiated with String")
+  @DisplayName("After new node is instantiated as a String type with no args")
   class AfterInstantiated{
     Node<String> node;
 
@@ -47,6 +48,52 @@ class NodeTest {
     @DisplayName("Prev field getter returns null")
     void prevGetterReturnsNull() {
       assertNull(node.getPrev());
+    }
+  }
+  
+  @Nested
+  @DisplayName("After next field setter method is called")
+  class AfterNextIsSet{
+    Node<String> node;
+    Node<String> newNode;
+    String str;
+
+    @BeforeEach
+    void init() {    
+      this.str = "String value";
+
+      node = new Node<String>();
+      newNode = new Node<String>(this.str);
+      node.setNext(newNode);
+    }  
+
+    @Test
+    @DisplayName("getNext() returns an instance of Node<String>")
+    void returnsNodeStringInstance() {
+      assertSame(node.getNext(), newNode);
+    }
+  }
+
+  @Nested
+  @DisplayName("After prev field setter method is called")
+  class AfterPrevIsSet{
+    Node<String> node;
+    Node<String> newNode;
+    String str;
+
+    @BeforeEach
+    void init() {    
+      this.str = "Hello, world";
+
+      node = new Node<String>();
+      newNode = new Node<String>(this.str);
+      node.setPrev(newNode);
+    }  
+
+    @Test
+    @DisplayName("getNext() returns an instance of Node<String>")
+    void returnsNodeStringInstance() {
+      assertSame(node.getPrev(), newNode);
     }
   }
 }
