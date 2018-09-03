@@ -4,7 +4,8 @@ Practice implementing a linked list using test driven development whilst making 
 
 The [SinglyLinkedList class](https://github.com/KDvu/katas/blob/master/java/linked_lists/src/main/java/SinglyLinkedList.java) implements the [LinkedList interface](https://github.com/KDvu/katas/blob/master/java/linked_lists/src/main/java/LinkedList.java) and the tests can be found at [src/test/java/SinglyLinkedListTest.java](https://github.com/KDvu/katas/blob/master/java/linked_lists/src/test/java/SinglyLinkedListTest.java)
 
-## Addtion changes that could be made
-- The implementation only works with integers. Making a generic linked list should be good to practice/learn Java generics.
-- More tests to cover all possible scenarios
-- Other methods (e.g. clear(), toArray(), etc)
+## Addition info
+- A mutable singly linked list (with a unnested node class) is used in the stack kata found [here](https://github.com/KDvu/katas/tree/master/java/stacks)
+- A generic mutable doubly linked list (with a unnested node class) is used in the queue kata found [here](https://github.com/KDvu/katas/tree/master/java/queues)
+
+
