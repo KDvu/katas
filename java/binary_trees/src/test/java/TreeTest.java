@@ -39,10 +39,10 @@ class NodeTest {
     }
 
     @Test
-    @DisplayName("Inserting an element equal to the root value should be inserted as the left child of the root node")
-    void shouldAppendToTheLeftIfEqual() {
+    @DisplayName("Inserting an element equal to the root value should incremnt the occurances field by 1")
+    void shouldIncrementOccurrancesFieldBy1() {
       binaryTree.add(10);
-      assertEquals(10, binaryTree.root.leftChild.value);
+      assertEquals(2, binaryTree.root.occurrences);
     }
 
     @Test
@@ -85,7 +85,7 @@ class NodeTest {
       @DisplayName("After removing an element from the tree")
       class AfterRemovingElement {
         @ParameterizedTest
-        @ValueSource(ints = {3, 11, 12, 13, 2, 5, 3})
+        @ValueSource(ints = {3, 11, 12, 13, 2, 5, 3, 10})
         @DisplayName("contains(int key) should return false after the value is removed")
         void containsShouldReturnFalse(int candidate){
           binaryTree.remove(candidate);

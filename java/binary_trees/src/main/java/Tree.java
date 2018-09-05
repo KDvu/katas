@@ -30,10 +30,12 @@ public class Tree {
       return new Node(val);
     }
 
-    if(currentNode.value >= val) {
+    if(currentNode.value > val) 
       currentNode.leftChild = addRecursive(currentNode.leftChild, val);
-    } else if(currentNode.value < val) 
+    else if(currentNode.value < val) 
       currentNode.rightChild = addRecursive(currentNode.rightChild, val);
+    else if (currentNode.value == val)
+      currentNode.occurrences++; 
 
     return currentNode;
   }
@@ -58,6 +60,7 @@ public class Tree {
         int smallestValue = findSmallestValue(currentNode.rightChild);
         currentNode.value = smallestValue;
         currentNode.rightChild = removeRecursive(currentNode.rightChild, smallestValue);
+        return currentNode;
       }
     }
 
