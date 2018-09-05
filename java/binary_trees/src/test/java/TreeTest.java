@@ -60,7 +60,7 @@ class NodeTest {
     }
 
     @Nested
-    @DisplayName("After many elements have been isnerted")
+    @DisplayName("After many elements have been inserted")
     class AfterManyElementedInserted{
       @BeforeEach
       void init() {
