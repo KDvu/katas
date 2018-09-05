@@ -72,6 +72,15 @@ class NodeTest {
         binaryTree.add(3);
         binaryTree.add(11);
         binaryTree.add(13);
+
+        // The above gives the tree
+        //          10
+        //         /  \
+        //        5    12 
+        //       /     / \ 
+        //      2     11  13
+        //       \
+        //        3
       }
 
       @ParameterizedTest
@@ -81,6 +90,34 @@ class NodeTest {
         assertTrue(binaryTree.contains(candidate));
       }
       
+      @Test
+      @DisplayName("In-order Traversal")
+      void InOrderTraversalReturnsCorrectOrder() {
+        String expectedResult = "2 3 5 10 11 12 13 ";
+        assertEquals(expectedResult, binaryTree.InOrderTraversal());
+      }
+
+      @Test
+      @DisplayName("Pre-order Traversal")
+      void PreOrderTraversalReturnsCorrectOrder() {
+        String expectedResult = "10 5 2 3 12 11 13 ";
+        assertEquals(expectedResult, binaryTree.PreOrderTraversal());
+      }
+
+      @Test
+      @DisplayName("Post-order Traversal")
+      void PostOrderTraversalReturnsCorrectOrder() {
+        String expectedResult = "3 2 5 11 13 12 10 ";
+        assertEquals(expectedResult, binaryTree.PostOrderTraversal());
+      }
+
+      @Test
+      @DisplayName("Breadth-First Traversal")
+      void BFTraversalReturnsCorrectOrder() {
+        String expectedResult = "10 5 12 2 11 13 3 ";
+        assertEquals(expectedResult, binaryTree.BFTraversal());
+      }
+
       @Nested
       @DisplayName("After removing an element from the tree")
       class AfterRemovingElement {

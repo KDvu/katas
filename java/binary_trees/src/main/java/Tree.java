@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Tree {
   public Node root;
 
@@ -91,4 +95,89 @@ public class Tree {
   private int findSmallestValue(Node currentNode) {
     return currentNode.leftChild == null? currentNode.value : findSmallestValue(currentNode.leftChild);
   } 
+
+  public String InOrderTraversal() {
+    String output = "";
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    InOrderTraversalRecursive(this.root, list);
+    
+    for(int i = 0; i < list.size(); i++) {
+      output += list.get(i) + " ";
+    }
+
+    return output;
+  }
+ 
+  private void InOrderTraversalRecursive(Node currentNode, ArrayList<Integer> list) {
+    if(currentNode != null) {
+      InOrderTraversalRecursive(currentNode.leftChild, list);
+      list.add(currentNode.value);
+      InOrderTraversalRecursive(currentNode.rightChild, list);
+    } 
+  }
+
+  public String PreOrderTraversal() {
+    String output = "";
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    PreOrderTraversalRecursive(this.root, list);
+    
+    for(int i = 0; i < list.size(); i++) {
+      output += list.get(i) + " ";
+    }
+
+    return output;
+  }
+ 
+  private void PreOrderTraversalRecursive(Node currentNode, ArrayList<Integer> list) {
+    if(currentNode != null) {
+      list.add(currentNode.value);
+      PreOrderTraversalRecursive(currentNode.leftChild, list);
+      PreOrderTraversalRecursive(currentNode.rightChild, list);
+    } 
+  }
+
+    public String PostOrderTraversal() {
+    String output = "";
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    PostOrderTraversalRecursive(this.root, list);
+    
+    for(int i = 0; i < list.size(); i++) {
+      output += list.get(i) + " ";
+    }
+
+    return output;
+  }
+ 
+  private void PostOrderTraversalRecursive(Node currentNode, ArrayList<Integer> list) {
+    if(currentNode != null) {
+      PostOrderTraversalRecursive(currentNode.leftChild, list);
+      PostOrderTraversalRecursive(currentNode.rightChild, list);
+      list.add(currentNode.value);
+    } 
+  }
+
+  public String BFTraversal() {
+    if(this.root == null) {
+      return "";
+    }
+
+    Queue<Node> nodes = new LinkedList<>();
+    String output = "";
+    nodes.add(root);
+    
+    while(!nodes.isEmpty()) {
+      Node node = nodes.remove();
+      output += node.value + " ";
+
+      if(node.leftChild != null) {
+        nodes.add(node.leftChild);
+      }
+
+      if(node.rightChild != null) {
+        nodes.add(node.rightChild);
+      }
+    }
+
+    return output;
+  }
 }
