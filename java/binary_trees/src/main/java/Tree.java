@@ -96,6 +96,11 @@ public class Tree {
     return currentNode.leftChild == null? currentNode.value : findSmallestValue(currentNode.leftChild);
   } 
 
+  //
+  // TREE TRAVERSAL ALGORITHMS
+  // Depth-First and Breadth-First
+  //
+
   public String InOrderTraversal() {
     String output = "";
     ArrayList<Integer> list = new ArrayList<Integer>();
