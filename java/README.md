@@ -17,14 +17,20 @@ To run a test:
 
 ## [Linked_lists](https://github.com/KDvu/katas/tree/master/java/linked_lists)
 - Non-generic immutable linked list
-- JUnit4
+- JUnit 4
 
 ## [Stacks](https://github.com/KDvu/katas/tree/master/java/stacks)
 - Non-generic Stack/Singly Linked List/Node classes
 - Uses different linked list implementation than the linked list kata
-- JUnit4
+- JUnit 4
 
 ## [Generic Queue](https://github.com/KDvu/katas/tree/master/java/queues)
 - Generic Queue/Doubly Linked List/Node classes
 - Uses different linked list implementation than the linked list kata
-- JUnit5
+- JUnit 5
+
+## [Binary Tree and Tree Traversal](https://github.com/KDvu/katas/tree/master/java/binary_trees)
+- Non-generic binary tree 
+- Depth-First Searches (In-order, Pre-order and Post-order)
+- Breath-First Search
+- JUnit 5
