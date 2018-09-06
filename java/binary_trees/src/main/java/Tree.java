@@ -141,7 +141,7 @@ public class Tree {
     } 
   }
 
-    public String PostOrderTraversal() {
+  public String PostOrderTraversal() {
     String output = "";
     ArrayList<Integer> list = new ArrayList<Integer>();
     PostOrderTraversalRecursive(this.root, list);
